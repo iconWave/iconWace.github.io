@@ -43,7 +43,6 @@
     "prettier": "^2.7.1",
     "rollup": "^2.0.0",
     "rollup-plugin-visualizer": "^5.7.1",
-    "sass": "^1.54.0",
     "terser": "^5.14.2",
     "typescript": "^4.7.4",
     "unplugin-vue-components": "^0.21.1",
