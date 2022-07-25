@@ -15,4 +15,4 @@ Since TypeScript cannot handle type information for `.vue` imports, they are shi
 
 You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/volar/discussions/471).
 
-git remote set-url origin https//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@https://github.com/iconWave/iconWace.github.io.git
+git remote set-url origin https//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@github.com/iconWave/iconWace.github.io.git
