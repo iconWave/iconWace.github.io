@@ -13,5 +13,6 @@ app.use(router);
 //挂载pinia
 app.use(store);
 
+console.log(import.meta.env.BASE_URL);
 //挂载实例
 app.mount('#app');
