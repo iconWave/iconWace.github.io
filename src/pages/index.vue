@@ -3,12 +3,12 @@
   <br />
   <UserPinia />
   <br />
+  <div class="root">我来了，我看到了，我征服了。</div>
+  <br />
   <router-link to="/login">点击跳转至login</router-link>
   <br />
   <router-link to="/vueuse">点击跳转至vueUse页面</router-link>
   <br />
-  <br />
-  <div class="root">我来了，我看到了，我征服了。</div>
 </template>
 
 <script lang="ts">
