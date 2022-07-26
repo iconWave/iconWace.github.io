@@ -76,13 +76,13 @@ export default defineConfig({
   // build
   build: {
     target: 'es2015',
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        keep_infinity: true,
-        drop_console: true,
-      },
-    },
+    // minify: 'terser',
+    // terserOptions: {
+    //   compress: {
+    //     keep_infinity: true,
+    //     drop_console: true,
+    //   },
+    //},
     rollupOptions: {
       output: {
         manualChunks: configManualChunk,
