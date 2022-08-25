@@ -1,17 +1,19 @@
-import { createApp } from 'vue';
-import store from './store';
-import router from './router';
-import './style.css';
-import App from './App.vue';
+import { createApp } from 'vue'
+import store from './store'
+import router from './router'
+import 'sanitize.css'
+import '/@/styles/index.less'
+import App from './App.vue'
+import './router/permission'
 
 //创建vue实例
-const app = createApp(App);
+const app = createApp(App)
 
 //挂载router
-app.use(router);
+app.use(router)
 
 //挂载pinia
-app.use(store);
+app.use(store)
 
 //挂载实例
-app.mount('#app');
+app.mount('#app')

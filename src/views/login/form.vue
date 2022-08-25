@@ -1,0 +1,130 @@
+<template>
+  <div class="login-form-box">
+    <a-form :model="forModel" :rules="rules" @finish="handleFinish">
+      <p class="text">请输入手机号登录</p>
+      <a-form-item name="username">
+        <a-input class="reset-input" v-model:value="forModel.username" placeholder="管理员：admin，普通：test">
+          <template #prefix>
+            <Icon size="24px" type="shoujihaodenglu" class="icon" />
+          </template>
+        </a-input>
+      </a-form-item>
+      <p class="text">请输入密码</p>
+      <a-form-item name="password">
+        <a-input class="reset-input" v-model:value="forModel.password" placeholder="密码为 123456">
+          <template #prefix>
+            <Icon size="24px" type="shurumimadenglu" class="icon" />
+          </template>
+        </a-input>
+      </a-form-item>
+      <a-form-item>
+        <a-row>
+          <a-col :span="12">
+            <a-checkbox class="reset-checkbox" v-model:checked="checked"> 自动登录 </a-checkbox>
+          </a-col>
+          <a-col :span="12" class="text-right">
+            <Icon size="24" type="question-outlined" class="icon" />
+          </a-col>
+        </a-row>
+      </a-form-item>
+      <a-form-item>
+        <a-button html-type="submit" class="btn" :loading="loading"> 立即登录 </a-button>
+      </a-form-item>
+    </a-form>
+    <p class="copyright">@copyright JS-banana</p>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { ref, reactive } from 'vue'
+import { useUserStore } from '/@/store/modules/user'
+import type { FormProps } from 'ant-design-vue'
+
+const userStore = useUserStore()
+const router = useRouter()
+const rules = {
+  username: [
+    {
+      required: true,
+      trigger: 'blur',
+      message: '请输入手机号',
+    },
+  ],
+  password: [
+    {
+      required: true,
+      trigger: 'blur',
+      message: '请输入密码',
+    },
+  ],
+} as FormProps['rules']
+
+const checked = ref(true)
+const loading = ref(false)
+const forModel = reactive({
+  username: '',
+  password: '',
+})
+const handleFinish = async (values) => {
+  loading.value = true
+  console.log(111000)
+  const res = await userStore.login(values)
+  loading.value = false
+  if (res) {
+    router.replace('/')
+  }
+}
+</script>
+
+<style lang="less">
+.login-form-box {
+  margin-top: 30px;
+  .btn {
+    width: 100%;
+    height: 54%;
+    background: linear-gradient(90deg, #00c3fd 0%, #3662f4 100%);
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 20px;
+    &:hover {
+      opacity: 0.85;
+      border: none;
+    }
+  }
+  .icon {
+    color: #666666;
+  }
+  .text {
+    font-size: 14px;
+    line-height: 20px;
+    color: #999999;
+    letter-spacing: 1.1px;
+    margin-bottom: 10px;
+  }
+  .gray-text {
+    font-size: 12px;
+    color: #666666;
+  }
+  .reset-checkbox {
+    .ant-checkbox-inner {
+      border-radius: 50%;
+    }
+    & > span:last-child {
+      font-size: 12px;
+      color: #666666;
+    }
+  }
+  .reset-input {
+    height: 50px;
+    line-height: 50px;
+    border: 1px solid #707070;
+    border-radius: 6px;
+  }
+  .copyright {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #999999;
+    opacity: 0.85;
+  }
+}
+</style>
