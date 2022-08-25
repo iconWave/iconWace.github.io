@@ -90,7 +90,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
       // 设置 https 代理
       proxy: {
         '/api': {
-          target: 'http://localhost:3000',
+          target: 'http://localhost:8080',
           changeOrigin: true,
           rewrite: (path) => path.replace(new RegExp(`^/api`), '')
         }
