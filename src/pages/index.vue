@@ -9,18 +9,30 @@
   <br />
   <router-link to="/vueuse">点击跳转至vueUse页面</router-link>
   <br />
+  <br />
+  <div class="root">我来了，我看到了，我征服了。</div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import UserPinia from '@/components/UserPinia.vue';
+import { defineComponent, ref } from 'vue'
+import UserPinia from '/@/components/UserPinia.vue'
+import PropTest from '/@/components/PropTest.vue'
 
 export default defineComponent({
   name: 'Index',
   components: {
     UserPinia,
+    PropTest
   },
-});
+  setup() {
+    //ref
+    const message = ref(100)
+    //reactive
+    const todoList = ['Feed a cat', 'Buy milk']
+
+    return { message, todoList: todoList }
+  }
+})
 </script>
 
 <style lang="less">
