@@ -1,0 +1,1 @@
+import{e as a,h as s}from"./index.754b7dd5.js";import{j as t,aB as e}from"./antdv.1e116ac1.js";const r=t({setup(){const t=s(),r=a();e((()=>{const{params:a,query:s}=t,{path:e}=a;r.replace({path:`/${e}`,query:s})}))}});export{r as default};

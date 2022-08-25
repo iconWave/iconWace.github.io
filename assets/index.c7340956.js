@@ -1,0 +1,1 @@
+import{j as a,r as s,U as n,D as t,E as e,V as l,z as u}from"./antdv.1e116ac1.js";const o=t("div",null,"account 账户",-1),r=a({__name:"index",setup(a){const r=s("tao");return(a,s)=>(u(),n(l,null,[o,t("p",null,e(r.value),1)],64))}});export{r as default};

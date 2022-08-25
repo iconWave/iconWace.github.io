@@ -1,0 +1,1 @@
+import{B as t,C as a,aC as s,z as r,l as e,am as o}from"./antdv.1e116ac1.js";import{_ as n}from"./index.754b7dd5.js";const i=n({},[["render",function(n,i){const u=o,d=s;return r(),t(d,{status:"404",title:"404","sub-title":"抱歉, 你访问的页面不存在。"},{extra:a((()=>[e(u,{type:"primary",onClick:i[0]||(i[0]=t=>n.$router.push("/"))})])),_:1})}]]);export{i as default};
