@@ -67,7 +67,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
         // https://github.com/anncwb/vite-plugin-mock/issues/9
         // 下面这段代码会被注入 main.ts
         injectCode: `
-           import { setupProdMockServer } from '../mock/_createProdMockServer';
+           import { setupProdMockServer } from '../mock/_createProdMockServer'
      
            setupProdMockServer();
            `
